@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{ client.name }}</title>
+</head>
+<body>
+    <h1>{{ client.name }}</h1>
+    <p>Email: {{ client.email }}</p>
+    <p>Phone: {{ client.phone }}</p>
+
+    <h2>Investments</h2>
+    <ul>
+        {% for investment in client.investments.all %}
+            <li>{{ investment.investment_type }}: ${{ investment.amount }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
